@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8887:5000"  # Ändere den Port auf 8887
+    volumes:
+      - image-raw:/app/uploads  # Change image-raw to something else, or create a volume thats named the same way
+    environment:
+      - FLASK_ENV=development
+      - ADMIN_USERNAME=cooldude  # CHANGE IT!
+      - ADMIN_PASSWORD=password  # CHANGE IT!
+
+volumes:
+  image-raw:  # Change image-raw to something else, or create a volume thats named the same way
